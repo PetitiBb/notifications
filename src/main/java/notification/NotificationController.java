@@ -20,8 +20,13 @@ public class NotificationController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String showFirstPage(){
+        return "First Page";
+    }
+
+    @RequestMapping(value = "/request", method = RequestMethod.GET)
     public String showPayload(){
-        return notificationModel.getType() + " " + notificationModel.getPayload();
+        return "Request received:  " + notificationModel.getType() + " " + notificationModel.getPayload();
     }
 
     public String displayParams(Map<String, String> params) {
